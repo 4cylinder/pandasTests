@@ -1,0 +1,46 @@
+<html>
+<title>Column Difference</title>
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class='container'>
+<form id='myForm' action='compare' method='post' enctype="multipart/form-data" novalidate>
+	{% csrf_token %}
+	<h2>Column Difference with AJAX and Pandas</h2>
+	<div class='row'>
+		<div class='col-6'>
+			<label for="games">Spreadsheet 1</label>
+			<input id="file1" name="file1" type="file">
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-6'>
+			<label for="platforms">Spreadsheet 2:</label>
+			<input id="file2" name="file2" type="file">
+		</div>
+	</div>
+	<div class='row'>
+		<button id='submitBtn' class="btn btn-primary">Compare Spreadsheets</button>
+	</div>
+</form>
+</div>
+
+</body>
+
+<script>
+$(function(){
+	$('#submitBtn').click(function(){
+		$('#myForm').submit();
+	});
+});
+</script>
+</html>
